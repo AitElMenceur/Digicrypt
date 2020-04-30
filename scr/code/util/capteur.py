@@ -1,10 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
 import hashlib
 import configparser
+from .Key import *
 from getpass import getpass as gp
-from pyfingerprint.pyfingerprint import PyFingerprint
+#from pyfingerprint.pyfingerprint import PyFingerprint
 """
 Bibliothèque utiliser pour interfacer le capteur biométrique
 PyFingerprint
@@ -93,8 +93,8 @@ def Gen(f):
         f.loadTemplate(Position, 0x01)
 
         charact = str(f.downloadCharacteristics(0x01)).encode('utf-8')
-        gen_password=hashlib.sha256(charact).hexdigest()
-        print("SHA-2 : " + gen_password)
+        key=Key(hashlib.sha256(charact).hexdigest())
+        print("SHA-2 : " + key)
         return gen_password
     except Exception as e:
         print("Echec!")
