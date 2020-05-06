@@ -78,7 +78,7 @@ def Effacer(f,psswd,index):
     else:
         print("erreur")
         return "Mauvais mot de passe"
-def Gen(f):
+def Gen(f,i):
     try:
         result = f.searchTemplate()
 
@@ -94,8 +94,14 @@ def Gen(f):
 
         charact = str(f.downloadCharacteristics(0x01)).encode('utf-8')
         key=Key(hashlib.sha256(charact).hexdigest())
-        print("SHA-2 : " + key)
-        return gen_password
+        if i==0:
+            return key
+        elif i==2:
+            return key.DES()
+        elif i==3:
+            return key.RC()
+        elif i==4:
+            return key.Misty()
     except Exception as e:
         print("Echec!")
         print("Erreur: " + str(e))

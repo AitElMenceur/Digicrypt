@@ -1,3 +1,9 @@
 {
-    "python.pythonPath": "C:\\Users\\ilyes\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe"
+    "python.pythonPath": "C:\\Users\\Ilturner\\Miniconda3\\python.exe",
+    "python.testing.pytestArgs": [
+        "scr"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true
 }
