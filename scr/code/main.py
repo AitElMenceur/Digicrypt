@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from gui import gui
+from GUI import gui as g
 
 
-gui.Build()
+g.Build()
